@@ -1,6 +1,6 @@
-package org.pinetree.constants.enums;
+package org.pinetree.enums.processor;
 
-public enum ProcessorPropertyEnum {
+public enum ProcessorProperty {
 
     DeviceID,
     Name,

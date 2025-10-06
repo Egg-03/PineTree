@@ -1,11 +1,11 @@
-package org.pinetree.constants.enums;
+package org.pinetree.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public enum NamespaceEnum {
+public enum Namespace {
 
     DEFAULT("root/cimv2");
 

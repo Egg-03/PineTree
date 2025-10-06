@@ -1,9 +1,9 @@
 package org.pinetree.service;
 
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
-import org.pinetree.constants.enums.NamespaceEnum;
-import org.pinetree.constants.enums.ProcessorPropertyEnum;
-import org.pinetree.constants.enums.WmiClassnameEnum;
+import org.pinetree.enums.Namespace;
+import org.pinetree.enums.processor.ProcessorProperty;
+import org.pinetree.enums.WmiClassname;
 import org.pinetree.entity.Processor;
 import org.pinetree.mapper.ProcessorMapper;
 import org.pinetree.util.ComUtil;
@@ -19,10 +19,10 @@ public class ProcessorService {
     public List<Processor> getProcessors() {
 
         // Use the WMI Util Class to get the result
-        WbemcliUtil.WmiResult<ProcessorPropertyEnum> result = WmiUtil.getResult(
-                NamespaceEnum.DEFAULT.getValue(),
-                WmiClassnameEnum.WIN32_PROCESSOR.getClassName(),
-                ProcessorPropertyEnum.class
+        WbemcliUtil.WmiResult<ProcessorProperty> result = WmiUtil.getResult(
+                Namespace.DEFAULT.getValue(),
+                WmiClassname.WIN32_PROCESSOR.getClassName(),
+                ProcessorProperty.class
         );
 
         // map the result set into a plain old java object
@@ -39,10 +39,10 @@ public class ProcessorService {
             ComUtil.initialize();
 
             // Use the WMI Util Class to get the result
-            WbemcliUtil.WmiResult<ProcessorPropertyEnum> result = WmiUtil.getResult(
-                    NamespaceEnum.DEFAULT.getValue(),
-                    WmiClassnameEnum.WIN32_PROCESSOR.getClassName(),
-                    ProcessorPropertyEnum.class
+            WbemcliUtil.WmiResult<ProcessorProperty> result = WmiUtil.getResult(
+                    Namespace.DEFAULT.getValue(),
+                    WmiClassname.WIN32_PROCESSOR.getClassName(),
+                    ProcessorProperty.class
             );
 
             // map the result set into a plain old java object
