@@ -1,7 +1,7 @@
-package org.pinetree.mapper;
+package org.pinetree.mapper.processor;
 
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
-import org.pinetree.entity.ProcessorCache;
+import org.pinetree.entity.processor.ProcessorCache;
 import org.pinetree.enums.processor.ProcessorCacheProperty;
 
 import java.util.ArrayList;

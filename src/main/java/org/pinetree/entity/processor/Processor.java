@@ -1,4 +1,4 @@
-package org.pinetree.entity;
+package org.pinetree.entity.processor;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

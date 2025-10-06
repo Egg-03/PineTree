@@ -1,11 +1,11 @@
-package org.pinetree.service;
+package org.pinetree.service.processor;
 
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
-import org.pinetree.entity.AssociatedProcessorMemory;
+import org.pinetree.entity.processor.AssociatedProcessorMemory;
 import org.pinetree.enums.Namespace;
 import org.pinetree.enums.WmiClassname;
 import org.pinetree.enums.processor.AssociatedProcessorMemoryProperty;
-import org.pinetree.mapper.AssociatedProcessorMemoryMapper;
+import org.pinetree.mapper.processor.AssociatedProcessorMemoryMapper;
 import org.pinetree.util.ComUtil;
 import org.pinetree.util.WmiUtil;
 
