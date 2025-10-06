@@ -1,39 +1,64 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>io.github.egg-03</groupId>
-  <artifactId>pinetree</artifactId>
-  <version>0.0.1</version>
-  <name>PineTree</name>
-  <description>A WMI Computer System Information Gathering Library using JNA</description>
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.egg-03</groupId>
+    <artifactId>pinetree</artifactId>
+    <version>0.0.1</version>
+    <name>PineTree</name>
+    <description>A WMI Computer System Information Gathering Library using JNA</description>
 
-  <properties>
-	<maven.compiler.source>21</maven.compiler.source>
-	<maven.compiler.target>21</maven.compiler.target>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <dependencies>
-  	  <dependency>
-    	  <groupId>org.apache.commons</groupId>
-    	  <artifactId>commons-lang3</artifactId>
-    	  <version>3.18.0</version>
-    	  <scope>compile</scope>
-	  </dependency>
-	  <dependency>
-    	  <groupId>commons-codec</groupId>
-    	  <artifactId>commons-codec</artifactId>
-    	  <version>1.18.0</version>
-      </dependency>
-      <dependency>
-          <groupId>net.java.dev.jna</groupId>
-          <artifactId>jna</artifactId>
-          <version>5.18.1</version>
-      </dependency>
-      <dependency>
-          <groupId>net.java.dev.jna</groupId>
-          <artifactId>jna-platform</artifactId>
-          <version>5.18.1</version>
-      </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>5.18.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna-platform</artifactId>
+            <version>5.18.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>13.0</version>
+        </dependency>
+    </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.1</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.38</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
