@@ -5,6 +5,6 @@ public enum ProcessorCacheProperty {
     DeviceID,
     Purpose,
     InstalledSize,
-    Associativity;
+    Associativity
 
 }

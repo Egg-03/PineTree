@@ -19,5 +19,5 @@ public enum ProcessorProperty {
     Family,
     Stepping,
     VirtualizationFirmwareEnabled,
-    ProcessorId;
+    ProcessorId
 }
