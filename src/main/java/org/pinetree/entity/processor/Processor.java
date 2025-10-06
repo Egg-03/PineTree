@@ -7,6 +7,33 @@ import lombok.Builder;
 import lombok.Value;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Immutable representation of a CPU device on a Windows system.
+ * <p>
+ * Fields correspond to properties retrieved from the {@code Win32_Processor} WMI class.
+ * Values are captured at query time and do not automatically update.
+ * <p>
+ * Instances are thread-safe and may be safely cached or shared across threads.
+ *
+ * <h2>Usage examples</h2>
+ * <pre>{@code
+ * // Build a new Processor instance
+ * Processor cpu = Processor.builder()
+ *     .name("Intel Core i9-13900K")
+ *     .numberOfCores(24)
+ *     .threadCount(32)
+ *     .maxClockSpeed(5300)
+ *     .build();
+ *
+ * // Create a modified copy using the builder
+ * Processor updated = cpu.toBuilder()
+ *     .threadCount(64)
+ *     .build();
+ * }</pre>
+ *
+ * {@link ProcessorCache} for related cache information.
+ * @see <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor">Win32_Processor</a>
+ */
 @Value
 @Builder(toBuilder = true)
 public class Processor {

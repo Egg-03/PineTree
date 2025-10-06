@@ -7,8 +7,23 @@ import org.pinetree.entity.processor.Processor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Converts raw WMI query results into {@link Processor} entities.
+ * <p>
+ * Methods of this class map the result provided by {@link WbemcliUtil.WmiResult} to
+ * immutable {@link Processor} objects for easier consumption within the application.
+ *
+ * <h3>Thread Safety</h3>
+ * Instances are stateless and therefore thread-safe.
+ */
 public class ProcessorMapper {
 
+    /**
+     * Maps WMI result data into a list of {@link Processor} entities.
+     *
+     * @param result the WMI query result containing processor properties
+     * @return a list of mapped {@link Processor} instances
+     */
     public List<Processor> toEntityList (WbemcliUtil.WmiResult<ProcessorProperty> result) {
 
         List<Processor> processorList = new ArrayList<>();

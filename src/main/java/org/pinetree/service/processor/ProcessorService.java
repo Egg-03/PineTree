@@ -11,10 +11,23 @@ import org.pinetree.util.WmiUtil;
 
 import java.util.List;
 
+/**
+ * Service class responsible for retrieving processor-related data from WMI.
+ * <p>
+ * Contacts {@link WmiUtil} to fetch processor info in the form of {@link WbemcliUtil.WmiResult} and then, calls {@link ProcessorMapper} to map the result
+ * into a list of {@link Processor} entities.
+ * </p>
+ * <h2>Thread Safety</h2>
+ * Instances are stateless and thread-safe.
+ */
 public class ProcessorService {
 
     /**
-     * Caller has to manage COM initialization and uninitialization.
+     * Retrieves a list of processors from the system.
+     * <p>
+     * The caller is responsible for initializing and uninitializing COM.
+     *
+     * @return list of {@link Processor} instances retrieved via WMI
      */
     public List<Processor> getProcessors() {
 
@@ -30,7 +43,11 @@ public class ProcessorService {
     }
 
     /**
-     * Caller does not have to manage COM initialization and uninitialization.
+     * Retrieves processor data while managing COM initialization and cleanup automatically.
+     * <p>
+     * Recommended for most callers who do not require manual COM control.
+     *
+     * @return list of {@link Processor} instances retrieved via WMI
      */
     public List<Processor> getProcessorsManaged() {
 
