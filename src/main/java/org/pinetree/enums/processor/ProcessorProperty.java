@@ -1,7 +1,7 @@
 package org.pinetree.enums.processor;
 
 /**
- * Defines all retrievable properties of the {@code Win32_Processor} WMI class.
+ * Defines some of the retrievable properties of the {@code Win32_Processor} WMI class.
  * <p>
  * Each constant represents a property name that can be used to extract
  * specific processor-related information via a WMI query.

@@ -7,8 +7,23 @@ import org.pinetree.enums.processor.ProcessorCacheProperty;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Converts raw WMI query results into {@link ProcessorCache} entities.
+ * <p>
+ * Methods of this class map the result provided by {@link WbemcliUtil.WmiResult} to
+ * immutable {@link ProcessorCache} objects for easier consumption within the application.
+ *
+ * <h3>Thread Safety</h3>
+ * Instances are stateless and therefore thread-safe.
+ */
 public class ProcessorCacheMapper {
 
+    /**
+     * Maps WMI result data into a list of {@link ProcessorCache} entities.
+     *
+     * @param result the WMI query result containing properties defined in {@link ProcessorCacheProperty}
+     * @return a list of mapped {@link ProcessorCache} instances
+     */
     public List<ProcessorCache> toEntityList (WbemcliUtil.WmiResult<ProcessorCacheProperty> result) {
 
         List<ProcessorCache> processorCacheList = new ArrayList<>();

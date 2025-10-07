@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * Fields correspond to properties retrieved from the {@code Win32_Processor} WMI class.
  * Values are captured at query time and do not automatically update.
- * <p>
+ * </p>
  * Instances are thread-safe and may be safely cached or shared across threads.
  *
  * <h2>Usage examples</h2>

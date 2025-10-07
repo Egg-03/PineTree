@@ -1,8 +1,8 @@
 package org.pinetree.mapper.processor;
 
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
-import org.pinetree.enums.processor.ProcessorProperty;
 import org.pinetree.entity.processor.Processor;
+import org.pinetree.enums.processor.ProcessorProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class ProcessorMapper {
     /**
      * Maps WMI result data into a list of {@link Processor} entities.
      *
-     * @param result the WMI query result containing processor properties
+     * @param result the WMI query result containing properties defined in {@link ProcessorProperty}
      * @return a list of mapped {@link Processor} instances
      */
     public List<Processor> toEntityList (WbemcliUtil.WmiResult<ProcessorProperty> result) {
