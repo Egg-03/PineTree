@@ -28,7 +28,12 @@ public enum WmiClassname {
     /**
      * WMI class for Physical Memory (RAM).
      */
-    WIN32_PHYSICAL_MEMORY("Win32_PhysicalMemory");
+    WIN32_PHYSICAL_MEMORY("Win32_PhysicalMemory"),
+
+    /**
+     * WMI class for GPU
+     */
+    WIN32_VIDEO_CONTROLLER("Win32_VideoController");
 
     private final String className;
 }
