@@ -15,16 +15,24 @@ public final class CastUtil {
 
     @Nullable
     public static Long toLongValue(Object value) {
-        if (value == null) return null;
-        if (value instanceof Number num) return num.longValue();
-        return Long.parseLong(value.toString().trim());
+        return switch (value) {
+            case null -> null;
+            case Integer i -> Integer.toUnsignedLong(i);
+            case Short s -> Short.toUnsignedLong(s);
+            case Number num -> num.longValue();
+            default -> Long.parseLong(value.toString().trim());
+        };
     }
 
     @Nullable
     public static Integer toIntegerValue(Object value) {
-        if (value == null) return null;
-        if (value instanceof Number num) return num.intValue();
-        return Integer.parseInt(value.toString().trim());
+        return switch (value) {
+            case null -> null;
+            case Short s -> Short.toUnsignedInt(s);
+            case Byte b -> Byte.toUnsignedInt(b);
+            case Number num -> num.intValue();
+            default -> Integer.parseInt(value.toString().trim());
+        };
     }
 
     @Nullable
