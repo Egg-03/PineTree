@@ -3,7 +3,6 @@ package org.pinetree.enums;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-
 /**
  * Contains names of some classes which are a part of the {@code root/cimv2} namespace of WMI.
  */
@@ -24,7 +23,12 @@ public enum WmiClassname {
     /**
      * Describes associations between processors and cache memory instances.
      */
-    WIN32_ASSOCIATED_PROCESSOR_MEMORY("Win32_AssociatedProcessorMemory");
+    WIN32_ASSOCIATED_PROCESSOR_MEMORY("Win32_AssociatedProcessorMemory"),
+
+    /**
+     * WMI class for Physical Memory (RAM).
+     */
+    WIN32_PHYSICAL_MEMORY("Win32_PhysicalMemory");
 
     private final String className;
 }
