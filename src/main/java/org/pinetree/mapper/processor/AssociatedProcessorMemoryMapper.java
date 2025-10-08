@@ -7,6 +7,8 @@ import org.pinetree.enums.processor.AssociatedProcessorMemoryProperty;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.pinetree.util.CastUtil.toStringValue;
+
 /**
  * Converts raw WMI query results into {@link AssociatedProcessorMemory} entities.
  * <p>
@@ -31,8 +33,8 @@ public class AssociatedProcessorMemoryMapper {
         for (int i = 0; i < result.getResultCount(); i++) {
 
             AssociatedProcessorMemory associatedProcessorMemory = AssociatedProcessorMemory.builder()
-                    .antecedent((String) result.getValue(AssociatedProcessorMemoryProperty.Antecedent, i))
-                    .dependent((String) result.getValue(AssociatedProcessorMemoryProperty.Dependent, i))
+                    .antecedent(toStringValue(result.getValue(AssociatedProcessorMemoryProperty.Antecedent, i)))
+                    .dependent(toStringValue(result.getValue(AssociatedProcessorMemoryProperty.Dependent, i)))
                     .build();
 
             associatedProcessorMemoryList.add(associatedProcessorMemory);

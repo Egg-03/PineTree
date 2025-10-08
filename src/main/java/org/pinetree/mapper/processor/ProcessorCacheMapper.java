@@ -7,6 +7,10 @@ import org.pinetree.enums.processor.ProcessorCacheProperty;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.pinetree.util.CastUtil.toIntegerValue;
+import static org.pinetree.util.CastUtil.toLongValue;
+import static org.pinetree.util.CastUtil.toStringValue;
+
 /**
  * Converts raw WMI query results into {@link ProcessorCache} entities.
  * <p>
@@ -31,10 +35,10 @@ public class ProcessorCacheMapper {
         for(int i=0; i< result.getResultCount(); i++) {
 
             ProcessorCache processorCache = ProcessorCache.builder()
-                    .deviceId((String) result.getValue(ProcessorCacheProperty.DeviceID, i))
-                    .purpose((String) result.getValue(ProcessorCacheProperty.Purpose, i))
-                    .installedSize((Integer) result.getValue(ProcessorCacheProperty.InstalledSize, i))
-                    .associativity((Integer) result.getValue(ProcessorCacheProperty.Associativity, i))
+                    .deviceId(toStringValue(result.getValue(ProcessorCacheProperty.DeviceID, i)))
+                    .purpose(toStringValue(result.getValue(ProcessorCacheProperty.Purpose, i)))
+                    .installedSize(toLongValue(result.getValue(ProcessorCacheProperty.InstalledSize, i)))
+                    .associativity(toIntegerValue(result.getValue(ProcessorCacheProperty.Associativity, i)))
                     .build();
 
             processorCacheList.add(processorCache);

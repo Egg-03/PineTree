@@ -7,6 +7,9 @@ import org.pinetree.enums.processor.ProcessorProperty;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.pinetree.util.CastUtil.toIntegerValue;
+import static org.pinetree.util.CastUtil.toStringValue;
+
 /**
  * Converts raw WMI query results into {@link Processor} entities.
  * <p>
@@ -32,24 +35,24 @@ public class ProcessorMapper {
         for(int i=0; i< result.getResultCount(); i++) {
             // Build Processor Object
             Processor processor = Processor.builder()
-                    .deviceId((String) result.getValue(ProcessorProperty.DeviceID, i))
-                    .name((String) result.getValue(ProcessorProperty.Name, i))
-                    .numberOfCores((Integer) result.getValue(ProcessorProperty.NumberOfCores, i))
-                    .threadCount((Integer) result.getValue(ProcessorProperty.ThreadCount, i))
-                    .numberOfLogicalProcessors((Integer) result.getValue(ProcessorProperty.NumberOfLogicalProcessors, i))
-                    .manufacturer((String) result.getValue(ProcessorProperty.Manufacturer, i))
-                    .addressWidth((Integer) result.getValue(ProcessorProperty.AddressWidth, i))
-                    .l2CacheSize((Integer) result.getValue(ProcessorProperty.L2CacheSize, i))
-                    .l3CacheSize((Integer) result.getValue(ProcessorProperty.L3CacheSize, i))
-                    .maxClockSpeed((Integer) result.getValue(ProcessorProperty.MaxClockSpeed, i))
-                    .extClock((Integer) result.getValue(ProcessorProperty.ExtClock, i))
-                    .socketDesignation((String) result.getValue(ProcessorProperty.SocketDesignation, i))
-                    .version((String) result.getValue(ProcessorProperty.Version, i))
-                    .caption((String) result.getValue(ProcessorProperty.Caption, i))
-                    .family((Integer) result.getValue(ProcessorProperty.Family, i))
-                    .stepping((String) result.getValue(ProcessorProperty.Stepping, i))
+                    .deviceId(toStringValue(result.getValue(ProcessorProperty.DeviceID, i)))
+                    .name(toStringValue(result.getValue(ProcessorProperty.Name, i)))
+                    .numberOfCores(toIntegerValue(result.getValue(ProcessorProperty.NumberOfCores, i)))
+                    .threadCount(toIntegerValue(result.getValue(ProcessorProperty.ThreadCount, i)))
+                    .numberOfLogicalProcessors(toIntegerValue(result.getValue(ProcessorProperty.NumberOfLogicalProcessors, i)))
+                    .manufacturer(toStringValue(result.getValue(ProcessorProperty.Manufacturer, i)))
+                    .addressWidth(toIntegerValue(result.getValue(ProcessorProperty.AddressWidth, i)))
+                    .l2CacheSize(toIntegerValue(result.getValue(ProcessorProperty.L2CacheSize, i)))
+                    .l3CacheSize(toIntegerValue(result.getValue(ProcessorProperty.L3CacheSize, i)))
+                    .maxClockSpeed(toIntegerValue(result.getValue(ProcessorProperty.MaxClockSpeed, i)))
+                    .extClock(toIntegerValue(result.getValue(ProcessorProperty.ExtClock, i)))
+                    .socketDesignation(toStringValue(result.getValue(ProcessorProperty.SocketDesignation, i)))
+                    .version(toStringValue(result.getValue(ProcessorProperty.Version, i)))
+                    .caption(toStringValue(result.getValue(ProcessorProperty.Caption, i)))
+                    .family(toIntegerValue(result.getValue(ProcessorProperty.Family, i)))
+                    .stepping(toStringValue(result.getValue(ProcessorProperty.Stepping, i)))
                     .virtualizationFirmwareEnabled((Boolean) result.getValue(ProcessorProperty.VirtualizationFirmwareEnabled, i))
-                    .processorId((String) result.getValue(ProcessorProperty.ProcessorId, i))
+                    .processorId(toStringValue(result.getValue(ProcessorProperty.ProcessorId, i)))
                     .build();
 
             processorList.add(processor);
