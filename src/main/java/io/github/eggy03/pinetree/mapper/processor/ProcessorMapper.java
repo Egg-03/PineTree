@@ -6,7 +6,7 @@ import io.github.eggy03.pinetree.enums.processor.ProcessorProperty;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import static io.github.eggy03.pinetree.util.CastUtil.toBooleanValue;
 import static io.github.eggy03.pinetree.util.CastUtil.toIntegerValue;
 import static io.github.eggy03.pinetree.util.CastUtil.toStringValue;
 
@@ -51,7 +51,7 @@ public class ProcessorMapper {
                     .caption(toStringValue(result.getValue(ProcessorProperty.Caption, i)))
                     .family(toIntegerValue(result.getValue(ProcessorProperty.Family, i)))
                     .stepping(toStringValue(result.getValue(ProcessorProperty.Stepping, i)))
-                    .virtualizationFirmwareEnabled((Boolean) result.getValue(ProcessorProperty.VirtualizationFirmwareEnabled, i))
+                    .virtualizationFirmwareEnabled(toBooleanValue(result.getValue(ProcessorProperty.VirtualizationFirmwareEnabled, i)))
                     .processorId(toStringValue(result.getValue(ProcessorProperty.ProcessorId, i)))
                     .build();
 
