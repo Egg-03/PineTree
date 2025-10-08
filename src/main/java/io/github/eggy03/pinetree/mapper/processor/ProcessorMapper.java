@@ -16,7 +16,7 @@ import static io.github.eggy03.pinetree.util.CastUtil.toStringValue;
  * Methods of this class map the result provided by {@link WbemcliUtil.WmiResult} to
  * immutable {@link Processor} objects for easier consumption within the application.
  *
- * <h3>Thread Safety</h3>
+ * <h5>Thread Safety</h5>
  * Instances are stateless and therefore thread-safe.
  */
 public class ProcessorMapper {
