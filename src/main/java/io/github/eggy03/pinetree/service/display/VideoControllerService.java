@@ -2,12 +2,10 @@ package io.github.eggy03.pinetree.service.display;
 
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
 import io.github.eggy03.pinetree.entity.display.VideoController;
-import io.github.eggy03.pinetree.entity.memory.PhysicalMemory;
 import io.github.eggy03.pinetree.enums.Namespace;
 import io.github.eggy03.pinetree.enums.WmiClassname;
 import io.github.eggy03.pinetree.enums.display.VideoControllerProperty;
 import io.github.eggy03.pinetree.mapper.display.VideoControllerMapper;
-import io.github.eggy03.pinetree.mapper.memory.PhysicalMemoryMapper;
 import io.github.eggy03.pinetree.util.ComUtil;
 import io.github.eggy03.pinetree.util.WmiUtil;
 
@@ -40,7 +38,7 @@ public class VideoControllerService {
      * }
      * }
      * </pre>
-     * @return list of {@link PhysicalMemory} instances retrieved via WMI
+     * @return list of {@link VideoController} instances retrieved via WMI
      */
     public List<VideoController> getVideoControllers() {
 

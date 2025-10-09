@@ -6,6 +6,7 @@ import io.github.eggy03.pinetree.enums.processor.ProcessorProperty;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import static io.github.eggy03.pinetree.util.CastUtil.toBooleanValue;
 import static io.github.eggy03.pinetree.util.CastUtil.toIntegerValue;
 import static io.github.eggy03.pinetree.util.CastUtil.toStringValue;
