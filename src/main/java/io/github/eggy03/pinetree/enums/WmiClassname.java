@@ -33,7 +33,12 @@ public enum WmiClassname {
     /**
      * WMI class for GPU
      */
-    WIN32_VIDEO_CONTROLLER("Win32_VideoController");
+    WIN32_VIDEO_CONTROLLER("Win32_VideoController"),
+
+    /**
+     * WMI class for Monitor
+     */
+    WIN32_DESKTOP_MONITOR("Win32_DesktopMonitor");
 
     private final String className;
 }
