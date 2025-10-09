@@ -6,6 +6,7 @@ import io.github.eggy03.pinetree.enums.Namespace;
 import io.github.eggy03.pinetree.enums.WmiClassname;
 import io.github.eggy03.pinetree.enums.processor.ProcessorCacheProperty;
 import io.github.eggy03.pinetree.mapper.processor.ProcessorCacheMapper;
+import io.github.eggy03.pinetree.service.CommonServiceInterface;
 import io.github.eggy03.pinetree.util.ComUtil;
 import io.github.eggy03.pinetree.util.WmiUtil;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
  */
-public class ProcessorCacheService {
+public class ProcessorCacheService implements CommonServiceInterface<ProcessorCache> {
 
     /**
      * Retrieves a list of processor caches from the system.
@@ -31,7 +32,7 @@ public class ProcessorCacheService {
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
-     *     List<ProcessorCache> cacheList = new ProcessorCacheService.getProcessorCaches();
+     *     List<ProcessorCache> cacheList = new ProcessorCacheService.get();
      *     cacheList.forEach(cache -> System.out.println(cache.toString());
      * } finally {
      *     ComUtil.uninitialize();
@@ -40,7 +41,8 @@ public class ProcessorCacheService {
      * </pre>
      * @return list of {@link ProcessorCache} instances retrieved via WMI
      */
-    public List<ProcessorCache> getProcessorCaches() {
+    @Override
+    public List<ProcessorCache> get() {
 
         WbemcliUtil.WmiResult<ProcessorCacheProperty> result = WmiUtil.getResult(
                 Namespace.DEFAULT.getValue(),
@@ -58,13 +60,14 @@ public class ProcessorCacheService {
      *
      * <h5>Usage Example</h5>
      * <pre>{@code
-     * List<ProcessorCache> cacheList = new ProcessorCacheService.getProcessorCachesManaged();
+     * List<ProcessorCache> cacheList = new ProcessorCacheService.getManaged();
      * cacheList.forEach(cache -> System.out.println(cache.toString());
      * }
      * </pre>
      * @return list of {@link ProcessorCache} instances retrieved via WMI
      */
-    public List<ProcessorCache> getProcessorCachesManaged() {
+    @Override
+    public List<ProcessorCache> getManaged() {
 
         try {
             ComUtil.initialize();

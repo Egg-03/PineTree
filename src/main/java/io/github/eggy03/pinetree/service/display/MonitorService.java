@@ -6,6 +6,7 @@ import io.github.eggy03.pinetree.enums.Namespace;
 import io.github.eggy03.pinetree.enums.WmiClassname;
 import io.github.eggy03.pinetree.enums.display.MonitorProperty;
 import io.github.eggy03.pinetree.mapper.display.MonitorMapper;
+import io.github.eggy03.pinetree.service.CommonServiceInterface;
 import io.github.eggy03.pinetree.util.ComUtil;
 import io.github.eggy03.pinetree.util.WmiUtil;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
  */
-public class MonitorService {
+public class MonitorService implements CommonServiceInterface<Monitor> {
 
     /**
      * Retrieves a list of Desktop Monitors from the system.
@@ -31,7 +32,7 @@ public class MonitorService {
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
-     *     List<Monitor> monitorList = new MonitorService().getMonitors();
+     *     List<Monitor> monitorList = new MonitorService().get();
      *     monitorList.forEach(monitor-> System.out.println(monitor.toString());
      * } finally {
      *     ComUtil.uninitialize();
@@ -40,7 +41,8 @@ public class MonitorService {
      * </pre>
      * @return list of {@link Monitor} instances retrieved via WMI
      */
-    public List<Monitor> getMonitors() {
+    @Override
+    public List<Monitor> get() {
 
         WbemcliUtil.WmiResult<MonitorProperty> result = WmiUtil.getResult(
                 Namespace.DEFAULT.getValue(),
@@ -58,13 +60,14 @@ public class MonitorService {
      *
      * <h5>Usage Example</h5>
      * <pre>{@code
-     * List<Monitor> monitorList = new MonitorService().getMonitorsManaged();
+     * List<Monitor> monitorList = new MonitorService().getManaged();
      * monitorList.forEach(monitor-> System.out.println(monitor.toString());
      * }
      * </pre>
      * @return list of {@link Monitor} instances retrieved via WMI
      */
-    public List<Monitor> getMonitorsManaged() {
+    @Override
+    public List<Monitor> getManaged() {
 
         try {
             ComUtil.initialize();

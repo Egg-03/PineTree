@@ -6,6 +6,7 @@ import io.github.eggy03.pinetree.enums.Namespace;
 import io.github.eggy03.pinetree.enums.WmiClassname;
 import io.github.eggy03.pinetree.enums.processor.ProcessorProperty;
 import io.github.eggy03.pinetree.mapper.processor.ProcessorMapper;
+import io.github.eggy03.pinetree.service.CommonServiceInterface;
 import io.github.eggy03.pinetree.util.ComUtil;
 import io.github.eggy03.pinetree.util.WmiUtil;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
  */
-public class ProcessorService {
+public class ProcessorService implements CommonServiceInterface<Processor> {
 
     /**
      * Retrieves a list of processors from the system.
@@ -31,7 +32,7 @@ public class ProcessorService {
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
-     *     List<Processor> cpuList = new ProcessorService.getProcessors();
+     *     List<Processor> cpuList = new ProcessorService.get();
      *     cpuList.forEach(cpu -> System.out.println(cpu.toString());
      * } finally {
      *     ComUtil.uninitialize();
@@ -40,7 +41,8 @@ public class ProcessorService {
      * </pre
      * @return list of {@link Processor} instances retrieved via WMI
      */
-    public List<Processor> getProcessors() {
+    @Override
+    public List<Processor> get() {
 
         // Use the WMI Util Class to get the result
         WbemcliUtil.WmiResult<ProcessorProperty> result = WmiUtil.getResult(
@@ -60,13 +62,14 @@ public class ProcessorService {
      *
      * <h5>Usage Example</h5>
      * <pre>{@code
-     * List<Processor> cpuList = new ProcessorCacheService.getProcessorsManaged();
+     * List<Processor> cpuList = new ProcessorCacheService.getManaged();
      * cpuList.forEach(cpu -> System.out.println(cpu.toString());
      * }
      * </pre>
      * @return list of {@link Processor} instances retrieved via WMI
      */
-    public List<Processor> getProcessorsManaged() {
+    @Override
+    public List<Processor> getManaged() {
 
         try {
             // Initialize COM

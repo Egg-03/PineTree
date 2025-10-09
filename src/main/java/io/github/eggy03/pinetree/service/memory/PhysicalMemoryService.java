@@ -6,6 +6,7 @@ import io.github.eggy03.pinetree.enums.Namespace;
 import io.github.eggy03.pinetree.enums.WmiClassname;
 import io.github.eggy03.pinetree.enums.memory.PhysicalMemoryProperty;
 import io.github.eggy03.pinetree.mapper.memory.PhysicalMemoryMapper;
+import io.github.eggy03.pinetree.service.CommonServiceInterface;
 import io.github.eggy03.pinetree.util.ComUtil;
 import io.github.eggy03.pinetree.util.WmiUtil;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
  */
-public class PhysicalMemoryService {
+public class PhysicalMemoryService implements CommonServiceInterface<PhysicalMemory> {
 
     /**
      * Retrieves a list of physical memories (RAM Sticks) from the system.
@@ -31,7 +32,7 @@ public class PhysicalMemoryService {
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
-     *     List<PhysicalMemory> memoryList = new PhysicalMemoryService().getMemories();
+     *     List<PhysicalMemory> memoryList = new PhysicalMemoryService().get();
      *     memoryList.forEach(memory -> System.out.println(memory.toString());
      * } finally {
      *     ComUtil.uninitialize();
@@ -40,7 +41,8 @@ public class PhysicalMemoryService {
      * </pre>
      * @return list of {@link PhysicalMemory} instances retrieved via WMI
      */
-    public List<PhysicalMemory> getMemories() {
+    @Override
+    public List<PhysicalMemory> get() {
 
         WbemcliUtil.WmiResult<PhysicalMemoryProperty> result = WmiUtil.getResult(
                 Namespace.DEFAULT.getValue(),
@@ -58,13 +60,14 @@ public class PhysicalMemoryService {
      *
      * <h5>Usage Example</h5>
      * <pre>{@code
-     * List<PhysicalMemory> memoryList = new PhysicalMemoryService().getMemories();
+     * List<PhysicalMemory> memoryList = new PhysicalMemoryService().getManaged();
      * memoryList.forEach(memory -> System.out.println(memory.toString());
      * }
      * </pre>
      * @return list of {@link PhysicalMemory} instances retrieved via WMI
      */
-    public List<PhysicalMemory> getMemoriesManaged() {
+    @Override
+    public List<PhysicalMemory> getManaged() {
 
         try{
             ComUtil.initialize();

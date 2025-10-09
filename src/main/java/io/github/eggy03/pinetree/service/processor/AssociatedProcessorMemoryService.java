@@ -8,6 +8,7 @@ import io.github.eggy03.pinetree.enums.Namespace;
 import io.github.eggy03.pinetree.enums.WmiClassname;
 import io.github.eggy03.pinetree.enums.processor.AssociatedProcessorMemoryProperty;
 import io.github.eggy03.pinetree.mapper.processor.AssociatedProcessorMemoryMapper;
+import io.github.eggy03.pinetree.service.CommonServiceInterface;
 import io.github.eggy03.pinetree.util.ComUtil;
 import io.github.eggy03.pinetree.util.WmiUtil;
 
@@ -23,7 +24,7 @@ import java.util.List;
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
  */
-public class AssociatedProcessorMemoryService {
+public class AssociatedProcessorMemoryService implements CommonServiceInterface<AssociatedProcessorMemory> {
 
     /**
      * Retrieves a list of associated processor memory mappings from the system.
@@ -34,7 +35,7 @@ public class AssociatedProcessorMemoryService {
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
-     *     List<AssociatedProcessorMemory> apmList = new AssociatedProcessorMemoryService().getAssociatedProcessorMemory();
+     *     List<AssociatedProcessorMemory> apmList = new AssociatedProcessorMemoryService().get();
      *     apmList.forEach(apm -> System.out.println(apm.toString());
      * } finally {
      *     ComUtil.uninitialize();
@@ -43,7 +44,8 @@ public class AssociatedProcessorMemoryService {
      * </pre>
      * @return list of {@link AssociatedProcessorMemory} instances retrieved via WMI
      */
-    public List<AssociatedProcessorMemory> getAssociatedProcessorMemory() {
+    @Override
+    public List<AssociatedProcessorMemory> get() {
 
         WbemcliUtil.WmiResult<AssociatedProcessorMemoryProperty> result = WmiUtil.getResult(
                 Namespace.DEFAULT.getValue(),
@@ -61,14 +63,15 @@ public class AssociatedProcessorMemoryService {
      *
      * <h5>Usage Example</h5>
      * <pre>{@code
-     * List<AssociatedProcessorMemory> apmList = new AssociatedProcessorMemoryService().getAssociatedProcessorMemoryManaged();
+     * List<AssociatedProcessorMemory> apmList = new AssociatedProcessorMemoryService().getManaged();
      *
      * apmList.forEach(apm -> System.out.println(apm.toString());
      * }
      * </pre>
      * @return list of {@link AssociatedProcessorMemory} instances retrieved via WMI
      */
-    public List<AssociatedProcessorMemory> getAssociatedProcessorMemoryManaged() {
+    @Override
+    public List<AssociatedProcessorMemory> getManaged() {
 
         try {
             ComUtil.initialize();

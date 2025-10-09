@@ -6,6 +6,7 @@ import io.github.eggy03.pinetree.enums.Namespace;
 import io.github.eggy03.pinetree.enums.WmiClassname;
 import io.github.eggy03.pinetree.enums.display.VideoControllerProperty;
 import io.github.eggy03.pinetree.mapper.display.VideoControllerMapper;
+import io.github.eggy03.pinetree.service.CommonServiceInterface;
 import io.github.eggy03.pinetree.util.ComUtil;
 import io.github.eggy03.pinetree.util.WmiUtil;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
  */
-public class VideoControllerService {
+public class VideoControllerService implements CommonServiceInterface<VideoController> {
 
     /**
      * Retrieves a list of Video Controllers (GPUs) from the system.
@@ -31,7 +32,7 @@ public class VideoControllerService {
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
-     *     List<VideoController> videoList = new VideoControllerService().getVideoControllers();
+     *     List<VideoController> videoList = new VideoControllerService().get();
      *     videoList.forEach(gpu -> System.out.println(gpu.toString());
      * } finally {
      *     ComUtil.uninitialize();
@@ -40,7 +41,8 @@ public class VideoControllerService {
      * </pre>
      * @return list of {@link VideoController} instances retrieved via WMI
      */
-    public List<VideoController> getVideoControllers() {
+    @Override
+    public List<VideoController> get() {
 
         WbemcliUtil.WmiResult<VideoControllerProperty> result = WmiUtil.getResult(
                 Namespace.DEFAULT.getValue(),
@@ -58,13 +60,14 @@ public class VideoControllerService {
      *
      * <h5>Usage Example</h5>
      * <pre>{@code
-     * List<VideoController> videoList = new VideoControllerService().getVideoControllersManaged();
+     * List<VideoController> videoList = new VideoControllerService().getManaged();
      * videoList.forEach(gpu -> System.out.println(gpu.toString());
      * }
      * </pre>
      * @return list of {@link VideoController} instances retrieved via WMI
      */
-    public List<VideoController> getVideoControllersManaged() {
+    @Override
+    public List<VideoController> getManaged() {
 
         try {
             ComUtil.initialize();
