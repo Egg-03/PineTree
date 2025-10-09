@@ -3,6 +3,7 @@ package io.github.eggy03.pinetree.mapper.display;
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
 import io.github.eggy03.pinetree.entity.display.VideoController;
 import io.github.eggy03.pinetree.enums.display.VideoControllerProperty;
+import io.github.eggy03.pinetree.mapper.CommonMappingInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import static io.github.eggy03.pinetree.util.CastUtil.toStringValue;
  * <h5>Thread Safety</h5>
  * Instances are stateless and therefore thread-safe.
  */
-public class VideoControllerMapper {
+public class VideoControllerMapper implements CommonMappingInterface<VideoController, VideoControllerProperty> {
 
     /**
      * Maps WMI result data into a list of {@link VideoController} entities.
@@ -28,6 +29,7 @@ public class VideoControllerMapper {
      * @param result the WMI query result containing properties defined in {@link VideoControllerProperty}
      * @return a list of mapped {@link VideoController} instances
      */
+    @Override
     public List<VideoController> toEntityList (WbemcliUtil.WmiResult<VideoControllerProperty> result) {
 
         List<VideoController> videoControllerList = new ArrayList<>();

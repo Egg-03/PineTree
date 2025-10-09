@@ -3,6 +3,7 @@ package io.github.eggy03.pinetree.mapper.display;
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
 import io.github.eggy03.pinetree.entity.display.Monitor;
 import io.github.eggy03.pinetree.enums.display.MonitorProperty;
+import io.github.eggy03.pinetree.mapper.CommonMappingInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ import static io.github.eggy03.pinetree.util.CastUtil.toStringValue;
  * <h5>Thread Safety</h5>
  * Instances are stateless and therefore thread-safe.
  */
-public class MonitorMapper {
+public class MonitorMapper implements CommonMappingInterface<Monitor, MonitorProperty> {
 
     /**
      * Maps WMI result data into a list of {@link Monitor} entities.
@@ -27,6 +28,7 @@ public class MonitorMapper {
      * @param result the WMI query result containing properties defined in {@link MonitorProperty}
      * @return a list of mapped {@link Monitor} instances
      */
+    @Override
     public List<Monitor> toEntityList (WbemcliUtil.WmiResult<MonitorProperty> result) {
 
         List<Monitor> monitorList = new ArrayList<>();

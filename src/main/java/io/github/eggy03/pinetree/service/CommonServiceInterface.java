@@ -16,6 +16,16 @@ import java.util.List;
  * </ul>
  * </p>
  *
+ * <h5>Flow Description</h5>
+ * <p>The typical data retrieval flow for service implementations is as follows:</p>
+ * <ol>
+ *   <li>The service invokes {@link WmiUtil#getResult(String, String, Class)} to execute a WMI query and obtain raw results.</li>
+ *   <li>The retrieved results are passed to a concrete mapper implementation that converts them into entities
+ *       defined under the {@link io.github.eggy03.pinetree.entity} package.</li>
+ *   <li>The fully mapped entity list is returned to the caller.</li>
+ *   <li>In {@link #getManaged()} implementations, {@link ComUtil#initialize()} and {@link ComUtil#uninitialize()} are invoked
+ *       internally to handle COM lifecycle management, allowing the caller to use the service safely without manual setup.</li>
+ * </ol>
  * <p>
  *     Implementations of the methods should take the help of utility classes {@link WmiUtil}
  *     and {@link ComUtil} to fetch results and maintain COM resource lifecycle.

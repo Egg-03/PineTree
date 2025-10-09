@@ -3,6 +3,7 @@ package io.github.eggy03.pinetree.mapper.memory;
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
 import io.github.eggy03.pinetree.entity.memory.PhysicalMemory;
 import io.github.eggy03.pinetree.enums.memory.PhysicalMemoryProperty;
+import io.github.eggy03.pinetree.mapper.CommonMappingInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import static io.github.eggy03.pinetree.util.CastUtil.toStringValue;
  * <h5>Thread Safety</h5>
  * Instances are stateless and therefore thread-safe.
  */
-public class PhysicalMemoryMapper {
+public class PhysicalMemoryMapper implements CommonMappingInterface<PhysicalMemory, PhysicalMemoryProperty> {
 
     /**
      * Maps WMI result data into a list of {@link PhysicalMemory} entities.
@@ -28,6 +29,7 @@ public class PhysicalMemoryMapper {
      * @param result the WMI query result containing properties defined in {@link PhysicalMemoryProperty}
      * @return a list of mapped {@link PhysicalMemory} instances
      */
+    @Override
     public List<PhysicalMemory> toEntityList (WbemcliUtil.WmiResult<PhysicalMemoryProperty> result) {
 
         List<PhysicalMemory> memoryList = new ArrayList<>();

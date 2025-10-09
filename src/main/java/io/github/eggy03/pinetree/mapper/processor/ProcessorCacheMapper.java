@@ -3,6 +3,7 @@ package io.github.eggy03.pinetree.mapper.processor;
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
 import io.github.eggy03.pinetree.entity.processor.ProcessorCache;
 import io.github.eggy03.pinetree.enums.processor.ProcessorCacheProperty;
+import io.github.eggy03.pinetree.mapper.CommonMappingInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import static io.github.eggy03.pinetree.util.CastUtil.toStringValue;
  * <h5>Thread Safety</h5>
  * Instances are stateless and therefore thread-safe.
  */
-public class ProcessorCacheMapper {
+public class ProcessorCacheMapper implements CommonMappingInterface<ProcessorCache, ProcessorCacheProperty> {
 
     /**
      * Maps WMI result data into a list of {@link ProcessorCache} entities.
@@ -28,6 +29,7 @@ public class ProcessorCacheMapper {
      * @param result the WMI query result containing properties defined in {@link ProcessorCacheProperty}
      * @return a list of mapped {@link ProcessorCache} instances
      */
+    @Override
     public List<ProcessorCache> toEntityList (WbemcliUtil.WmiResult<ProcessorCacheProperty> result) {
 
         List<ProcessorCache> processorCacheList = new ArrayList<>();
