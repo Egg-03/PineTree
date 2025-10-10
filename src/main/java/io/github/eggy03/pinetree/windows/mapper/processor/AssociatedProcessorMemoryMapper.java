@@ -11,7 +11,7 @@ import java.util.List;
 import static io.github.eggy03.pinetree.windows.util.CastUtil.toStringValue;
 
 /**
- * Converts raw WMI query results into {@link AssociatedProcessorMemory} entities.
+ * Maps raw WMI query results into {@link AssociatedProcessorMemory} entities.
  * <p>
  * Methods of this class map the result provided by {@link WbemcliUtil.WmiResult} to
  * immutable {@link AssociatedProcessorMemory} objects for easier consumption within the application.

@@ -7,7 +7,7 @@ import com.sun.jna.platform.win32.Ole32;
  * Utility class for managing the initialization and uninitialization
  * of the COM library on the current thread.
  * <p>
- * This ensures that Windows Management Instrumentation (WMI) calls can be executed without leakage of resources.
+ * Provides an abstraction for initializing and closing the COM library.
  * </p>
  * <h2>Usage</h2>
  * <pre>{@code
@@ -31,6 +31,8 @@ public class ComUtil {
      * <p>
      * Should be called before performing any WMI operations if not using a managed service method.
      * </p>
+     * @see <a href="https://learn.microsoft.com/en-us/windows/win32/wmisdk/example--getting-wmi-data-from-the-local-computer">
+     *     C++ equivalent example used in the official microsoft documentation</a>
      */
     public static void initialize() {
 
@@ -54,7 +56,8 @@ public class ComUtil {
     /**
      * Uninitializes COM for the current thread.
      * <p>
-     * Should always be called in a {@code finally} block to ensure unloading of DLLs and freeing of resources.
+     * Should always be called at the end of the methods implementing it to ensure the COM library is closed for the
+     * given thread.
      */
     public static void uninitialize() {
         Ole32.INSTANCE.CoUninitialize();

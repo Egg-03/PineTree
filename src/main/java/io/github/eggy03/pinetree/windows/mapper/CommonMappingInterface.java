@@ -6,7 +6,7 @@ import io.github.eggy03.pinetree.windows.util.WmiUtil;
 import java.util.List;
 
 /**
- * Interface defining a contract for mapping raw result retrieved from
+ * Interface declaring a contract for mapping raw result retrieved from
  * {@link WbemcliUtil.WmiResult} into one of the entity classes
  * defined in {@link io.github.eggy03.pinetree.windows.entity} package
  * <p>

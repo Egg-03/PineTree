@@ -22,7 +22,7 @@
  *
  * <h2> Overview </h2>
  * <p>
- * This illustration demonstrates how to define a custom entity, enum, mapper, and service
+ * The following workflow demonstrates how to define a custom entity, enum, mapper, and service
  * to retrieve WMI data and make it available for consumption outside of this library.
  * This is intended for developers, contributors, and advanced users who wish to extend
  * the functionality of this library by adding support for additional WMI classes.

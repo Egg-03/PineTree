@@ -12,7 +12,7 @@ import static io.github.eggy03.pinetree.windows.util.CastUtil.toIntegerValue;
 import static io.github.eggy03.pinetree.windows.util.CastUtil.toStringValue;
 
 /**
- * Converts raw WMI query results into {@link Monitor} entities.
+ * Maps raw WMI query results into {@link Monitor} entities.
  * <p>
  * Methods of this class map the result provided by {@link WbemcliUtil.WmiResult} to
  * immutable {@link Monitor} objects for easier consumption within the application.

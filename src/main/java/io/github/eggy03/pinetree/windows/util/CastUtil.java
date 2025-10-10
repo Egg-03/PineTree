@@ -4,21 +4,15 @@ import com.sun.jna.platform.win32.COM.WbemcliUtil;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Utility class that casts {@link Object} values retrieved from
+ * Utility class for casting {@link Object} values retrieved from
  * {@link WbemcliUtil.WmiResult#getValue(Enum, int)} into common Java types.
  *
  * <p>
  * Since WMI query results are returned as generic {@link Object} instances, these helper methods
  * handle provide ways to cast them into common Java types.
- * This class is typically used inside mapper implementations present in the
+ * This class is only for use within the library. Example usages include the implementations of the mappers in the
  * {@link io.github.eggy03.pinetree.windows.mapper} package.
  * </p>
- *
- * <h2>Usage</h2>
- * <pre>{@code
- * Object rawValue = result.getValue(MonitorProperty.DeviceID, 0);
- * String deviceId = CastUtil.toStringValue(rawValue);
- * }</pre>
  *
  * <h2>Supported Conversions</h2>
  * <ul>
@@ -38,12 +32,12 @@ public final class CastUtil {
     /**
      * Converts a raw WMI property value of {@link Object} type, into a {@link Long}.
      * <p>
-     * Handles unsigned conversions for {@link Integer} and {@link Short} types,
-     * and falls back to parsing from {@code toString()} for other numeric-like inputs.
+     * Also handles unsigned conversions for {@link Integer} and {@link Short} types,
+     * and falls back to parsing from {@code toString()} for other types.
      * </p>
      *
      * @param value the raw WMI property value to convert
-     * @return the converted {@link Long} value, or {@code null} if input is {@code null}
+     * @return the converted {@link Long} value, or {@code null} if the input value is {@code null}
      */
     @Nullable
     public static Long toLongValue(Object value) {
@@ -59,12 +53,12 @@ public final class CastUtil {
     /**
      * Converts a raw WMI property value of {@link Object} type, into an {@link Integer}.
      * <p>
-     * Handles unsigned conversions for {@link Short} and {@link Byte} types,
-     * and falls back to parsing from {@code toString()} for other numeric-like inputs.
+     * Also handles unsigned conversions for {@link Short} and {@link Byte} types,
+     * and falls back to parsing from {@code toString()} for other input types.
      * </p>
      *
      * @param value the raw WMI property value to convert
-     * @return the converted {@link Integer} value, or {@code null} if input is {@code null}
+     * @return the converted {@link Integer} value, or {@code null} if the input value is {@code null}
      */
     @Nullable
     public static Integer toIntegerValue(Object value) {
@@ -81,7 +75,7 @@ public final class CastUtil {
      * Converts a raw WMI property value of {@link Object} type into a trimmed {@link String}.
      *
      * @param value the raw WMI property value to convert
-     * @return the string representation, or {@code null} if input is {@code null}
+     * @return the string representation, or {@code null} if the input value is {@code null}
      */
     @Nullable
     public static String toStringValue(Object value) {
@@ -92,12 +86,12 @@ public final class CastUtil {
     /**
      * Converts a raw WMI property value of {@link Object} type into a {@link Boolean}.
      * <p>
-     * Accepts native boolean types as well as string-based representations such as
+     * Can convert native boolean types as well as string-based representations such as
      * {@code "true"}, {@code "false"}.
      * </p>
      *
      * @param value the raw WMI value to convert
-     * @return the boolean representation, or {@code null} if input is {@code null}
+     * @return the boolean representation, or {@code null} if the input value is {@code null}
      */
     @Nullable
     public static Boolean toBooleanValue(Object value) {

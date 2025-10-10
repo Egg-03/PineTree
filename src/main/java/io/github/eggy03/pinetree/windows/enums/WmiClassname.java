@@ -4,7 +4,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * Contains names of some classes which are a part of the {@code root/cimv2} namespace of WMI.
+ * Contains names of some Computer Hardware and Configuration classes which are a part of the
+ * {@code root/cimv2} namespace of WMI.
  * @since 1.0
  */
 @RequiredArgsConstructor

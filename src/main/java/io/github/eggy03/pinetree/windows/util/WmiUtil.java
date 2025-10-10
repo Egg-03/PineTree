@@ -3,7 +3,7 @@ package io.github.eggy03.pinetree.windows.util;
 import com.sun.jna.platform.win32.COM.WbemcliUtil;
 
 /**
- * Utility class for executing WMI queries and returning typed results.
+ * Utility class for executing WMI queries and returning results.
  * <p>
  * Provides a simple wrapper over {@link WbemcliUtil.WmiQuery}
  * and returns results in the form of {@link WbemcliUtil.WmiResult}
@@ -19,8 +19,8 @@ public class WmiUtil {
     /**
      * Executes a WMI query for the given class and property enumeration.
      *
-     * @param nameSpace     the WMI namespace to query, e.g. {@code root/cimv2}
-     * @param wmiClassName  the WMI class to query, e.g. {@code Win32_Processor}
+     * @param nameSpace     the WMI namespace passed to the query, e.g. {@code root/cimv2}
+     * @param wmiClassName  the WMI class passed to the query, e.g. {@code Win32_Processor}
      * @param propertyEnum  the enum defining the class properties to retrieve
      * @param <S>           the type of the property enum
      * @return the {@link WbemcliUtil.WmiResult} containing property values

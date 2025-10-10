@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
  * <p>
  * Each constant defines a root namespace from which WMI classes can be accessed.
  * Currently, only the default namespace {@code root/cimv2} is supported.
+ * </p>
  * @since 1.0
  */
 @RequiredArgsConstructor
@@ -15,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 public enum Namespace {
 
     /**
-     * The default WMI namespace containing standard CIM and Win32 classes.
+     * The default WMI namespace containing the Computer Hardware and Configuration classes
      */
     DEFAULT("root/cimv2");
 

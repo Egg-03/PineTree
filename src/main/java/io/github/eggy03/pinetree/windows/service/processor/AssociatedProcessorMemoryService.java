@@ -30,7 +30,8 @@ public class AssociatedProcessorMemoryService implements CommonServiceInterface<
     /**
      * Retrieves a list of associated processor memory mappings from the system.
      * <p>
-     * The caller is responsible for initializing and uninitializing COM.
+     * This method requires you to manually initialize and uninitialize the COM library.
+     * </p>
      *
      * <h4>Usage Example</h4>
      * <pre>{@code
@@ -58,9 +59,11 @@ public class AssociatedProcessorMemoryService implements CommonServiceInterface<
     }
 
     /**
-     * Retrieves associated processor memory mapping related data while managing COM initialization and cleanup automatically.
+     * Retrieves a list of associated processor memory mappings from the system.
      * <p>
-     * Recommended for most callers who do not require manual COM control.
+     * This method automatically handles COM setup and cleanup,
+     * so you don't need to initialize COM manually.
+     * </p>
      *
      * <h4>Usage Example</h4>
      * <pre>{@code
