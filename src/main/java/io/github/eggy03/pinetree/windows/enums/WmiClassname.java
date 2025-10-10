@@ -11,32 +11,32 @@ import lombok.RequiredArgsConstructor;
 public enum WmiClassname {
 
     /**
-     * Retrieves processor information name, core-count, thread-count and more.
+     * WMI class name for {@code Win32_Processor}
      */
     WIN32_PROCESSOR("Win32_Processor"),
 
     /**
-     * Provides cache memory details for L1, L2, and L3 cache levels, for a given Processor.
+     * WMI class name for {@code Win32_CacheMemory}
      */
     WIN32_CACHE_MEMORY("Win32_CacheMemory"),
 
     /**
-     * Describes associations between processors and cache memory instances.
+     * WMI class name for {@code Win32_AssociatedProcessorMemory}
      */
     WIN32_ASSOCIATED_PROCESSOR_MEMORY("Win32_AssociatedProcessorMemory"),
 
     /**
-     * WMI class for Physical Memory (RAM).
+     * WMI class name for {@code Win32_PhysicalMemory}
      */
     WIN32_PHYSICAL_MEMORY("Win32_PhysicalMemory"),
 
     /**
-     * WMI class for GPU
+     * WMI class name for {@code Win32_VideoController}
      */
     WIN32_VIDEO_CONTROLLER("Win32_VideoController"),
 
     /**
-     * WMI class for Monitor
+     * WMI class name for {@code Win32_DesktopMonitor}
      */
     WIN32_DESKTOP_MONITOR("Win32_DesktopMonitor");
 
