@@ -33,6 +33,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * {@link ProcessorCache} for related cache information.
  * @see <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor">Win32_Processor</a>
+ * @since 1.0
  */
 @Value
 @Builder(toBuilder = true)

@@ -35,6 +35,7 @@ import org.jetbrains.annotations.Nullable;
  * {@link Processor} for related CPU information.
  * {@link ProcessorCache} for related CPU Cache information.
  * @see <a href="https://powershell.one/wmi/root/cimv2/win32_associatedprocessormemory">Win32_AssociatedProcessorMemory</a>
+ * @since 1.0
  */
 @Value
 @Builder (toBuilder = true)

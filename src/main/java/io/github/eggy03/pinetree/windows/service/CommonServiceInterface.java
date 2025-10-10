@@ -102,6 +102,7 @@ import java.util.List;
  * }</pre>
  *
  * @param <S> the entity type returned by the service implementation
+ * @since 1.0
  */
 public interface CommonServiceInterface<S> {
 

@@ -20,6 +20,7 @@ import java.util.List;
  * </p>
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
+ * @since 1.0
  */
 public class ProcessorCacheService implements CommonServiceInterface<ProcessorCache> {
 
@@ -28,7 +29,7 @@ public class ProcessorCacheService implements CommonServiceInterface<ProcessorCa
      * <p>
      * The caller is responsible for initializing and uninitializing COM.
      *
-     * <h5>Usage Example</h5>
+     * <h4>Usage Example</h4>
      * <pre>{@code
      * try{
      *     ComUtil.initialize();

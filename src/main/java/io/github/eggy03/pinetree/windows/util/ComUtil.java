@@ -9,7 +9,7 @@ import com.sun.jna.platform.win32.Ole32;
  * <p>
  * This ensures that Windows Management Instrumentation (WMI) calls can be executed without leakage of resources.
  * </p>
- * <h2>Usage</h2>
+ * <h5>Usage</h5>
  * <pre>{@code
  * ComUtil.initialize();
  * try {
@@ -18,6 +18,7 @@ import com.sun.jna.platform.win32.Ole32;
  *     ComUtil.uninitialize();
  * }
  * }</pre>
+ * @since 1.0
  */
 public class ComUtil {
 

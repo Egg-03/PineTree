@@ -9,6 +9,7 @@ import io.github.eggy03.pinetree.windows.entity.processor.ProcessorCache;
  * {@link AssociatedProcessorMemoryProperty#Antecedent} represents {@link ProcessorCache#getDeviceId()}
  * and {@link AssociatedProcessorMemoryProperty#Dependent} represents {@link Processor#getDeviceId()}
  * <p>These properties help associate a {@link Processor} with its {@link ProcessorCache}</p>
+ * @since 1.0
  */
 public enum AssociatedProcessorMemoryProperty {
 

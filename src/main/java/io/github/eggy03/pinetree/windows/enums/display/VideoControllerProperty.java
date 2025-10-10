@@ -5,6 +5,7 @@ package io.github.eggy03.pinetree.windows.enums.display;
  * <p>
  * Each constant represents a property name that can be used to extract
  * specific Video-Controller-related information via a WMI query.
+ * @since 1.0
  */
 public enum VideoControllerProperty {
 

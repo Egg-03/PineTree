@@ -5,6 +5,7 @@ package io.github.eggy03.pinetree.windows.enums.processor;
  * <p>
  * Each constant represents a property name that can be used to extract
  * specific processor-related information via a WMI query.
+ * @since 1.0
  */
 public enum ProcessorProperty {
 

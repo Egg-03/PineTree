@@ -8,6 +8,7 @@ import com.sun.jna.platform.win32.COM.WbemcliUtil;
  * Provides a simple wrapper over {@link WbemcliUtil.WmiQuery}
  * and returns results in the form of {@link WbemcliUtil.WmiResult}
  * </p>
+ * @since 1.0
  */
 public class WmiUtil {
 

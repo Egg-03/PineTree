@@ -20,6 +20,7 @@ import java.util.List;
  * </p>
  * <h5>Thread Safety</h5>
  * Instances are stateless and thread-safe.
+ * @since 1.0
  */
 public class MonitorService implements CommonServiceInterface<Monitor> {
 

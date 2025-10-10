@@ -34,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * {@link Processor} for related CPU information.
  * @see <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-cachememory">Win32_CacheMemory</a>
+ * @since 1.0
  */
 @Value
 @Builder(toBuilder = true)

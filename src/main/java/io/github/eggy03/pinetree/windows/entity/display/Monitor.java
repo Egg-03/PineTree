@@ -32,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * }</pre>
  *
  * @see <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-desktopmonitor">Win32_DesktopMonitor</a>
+ * @since 1.0
  */
 
 @Value

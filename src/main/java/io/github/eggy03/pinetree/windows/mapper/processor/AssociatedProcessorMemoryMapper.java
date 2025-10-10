@@ -18,6 +18,7 @@ import static io.github.eggy03.pinetree.windows.util.CastUtil.toStringValue;
  *
  * <h5>Thread Safety</h5>
  * Instances are stateless and therefore thread-safe.
+ * @since 1.0
  */
 public class AssociatedProcessorMemoryMapper implements CommonMappingInterface<AssociatedProcessorMemory, AssociatedProcessorMemoryProperty> {
 

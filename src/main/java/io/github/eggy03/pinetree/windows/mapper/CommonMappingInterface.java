@@ -68,6 +68,7 @@ import java.util.List;
  *
  * @param <S> the entity type to which the result will be mapped
  * @param <T> the enum type defining the property fields to extract from the WMI result
+ * @since 1.0
  */
 public interface CommonMappingInterface<S, T extends Enum<T>> {
 

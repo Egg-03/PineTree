@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
  * <p>
  * Each constant defines a root namespace from which WMI classes can be accessed.
  * Currently, only the default namespace {@code root/cimv2} is supported.
+ * @since 1.0
  */
 @RequiredArgsConstructor
 @Getter
