@@ -20,7 +20,7 @@
  *   query execution, and result casting.</li>
  * </ul>
  *
- * <h4> Overview </h4>
+ * <h2> Overview </h2>
  * <p>
  * This illustration demonstrates how to define a custom entity, enum, mapper, and service
  * to retrieve WMI data and make it available for consumption outside of this library.
@@ -32,7 +32,7 @@
  * The final section demonstrates how to consume the service once it's implemented.
  * </p>
  *
- * <h4>Implementation</h4>
+ * <h2>Implementation</h2>
  *
  * <p> For illustration, we will implement {@code Win32_DesktopMonitor} WMI class.</p>
  *
@@ -49,7 +49,7 @@
  * exactly as defined when building your enum.
  * </p>
  *
- * <h6>1. Define the Entity</h6>
+ * <h3>1. Define the Entity</h3>
  * Entities are defined under {@link io.github.eggy03.pinetree.windows.entity}
  * <pre>{@code
  * @Value
@@ -76,7 +76,7 @@
  * }
  * }</pre>
  *
- * <h6>2. Define the Enum</h6>
+ * <h3>2. Define the Enum</h3>
  * Enums are defined under {@link io.github.eggy03.pinetree.windows.enums}.
  * The names must match the exact property names found in the WMI class documentation.
  * <pre>{@code
@@ -106,7 +106,7 @@
  * }
  * }</pre>
  *
- * <h6>3. Implement the Mapper</h6>
+ * <h3>3. Implement the Mapper</h3>
  * <p>
  * Mappers reside in the {@link io.github.eggy03.pinetree.windows.mapper} package and implement
  * {@link io.github.eggy03.pinetree.windows.mapper.CommonMappingInterface}.
@@ -138,7 +138,7 @@
  * needs to be type-casted. For easier casting, we have defined utility methods in {@link io.github.eggy03.pinetree.windows.util.CastUtil}
  * </p>
  *
- * <h6>4. Implement the Service</h6>
+ * <h3>4. Implement the Service</h3>
  * <p>
  * Services reside in the {@link io.github.eggy03.pinetree.windows.service} package and implement
  * {@link io.github.eggy03.pinetree.windows.service.CommonServiceInterface}.
@@ -181,11 +181,11 @@
  * }
  * }</pre>
  *
- * <h4>Consumption</h4>
+ * <h2>Consumption</h2>
  * <p>
  *     Once implemented, your service can be consumed as follows:
  * </p>
- * <h6> Consuming the {@code Win32_DesktopMonitor} class</h6>
+ * <h3> Consuming the {@code Win32_DesktopMonitor} class</h3>
  * <pre>{@code
  * public static void main(String[] args) {
  *     // auto managed COM

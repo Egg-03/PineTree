@@ -21,7 +21,7 @@ import java.util.List;
  * Contacts {@link WmiUtil} to fetch processor info in the form of {@link WbemcliUtil.WmiResult} and then, calls {@link AssociatedProcessorMemoryMapper} to map the result
  * into a list of {@link AssociatedProcessorMemory} entities.
  * </p>
- * <h5>Thread Safety</h5>
+ * <h2>Thread Safety</h2>
  * Instances are stateless and thread-safe.
  * @since 1.0
  */
@@ -32,7 +32,7 @@ public class AssociatedProcessorMemoryService implements CommonServiceInterface<
      * <p>
      * The caller is responsible for initializing and uninitializing COM.
      *
-     * <h5>Usage Example</h5>
+     * <h4>Usage Example</h4>
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
@@ -62,7 +62,7 @@ public class AssociatedProcessorMemoryService implements CommonServiceInterface<
      * <p>
      * Recommended for most callers who do not require manual COM control.
      *
-     * <h5>Usage Example</h5>
+     * <h4>Usage Example</h4>
      * <pre>{@code
      * List<AssociatedProcessorMemory> apmList = new AssociatedProcessorMemoryService().getManaged();
      *

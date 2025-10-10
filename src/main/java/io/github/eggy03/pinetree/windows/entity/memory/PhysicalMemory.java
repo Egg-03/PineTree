@@ -11,9 +11,10 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * Fields correspond to properties retrieved from the {@code Win32_PhysicalMemory} WMI class.
  * Values are captured at query time and do not update automatically.
+ * </p>
  * <p>
  * Instances are inherently thread-safe and may be safely cached or shared across threads.
- * <p>
+ * </p>
  *
  * <h2>Usage example</h2>
  * <pre>{@code

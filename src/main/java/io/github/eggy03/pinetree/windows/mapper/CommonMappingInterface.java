@@ -11,13 +11,13 @@ import java.util.List;
  * defined in {@link io.github.eggy03.pinetree.windows.entity} package
  * <p>
  * Implementations of this interface are expected to provide concrete definitions for:
+ * </p>
  * <ul>
  *   <li>{@link #toEntityList(WbemcliUtil.WmiResult)} – map raw WMI query result into a
  *   list of Plain Old Java Objects (POJOs) </li>
  * </ul>
- * </p>
  *
- * <h5>Flow Description</h5>
+ * <h2>Flow Description</h2>
  * <p>The mapping flow typically follows this sequence:</p>
  * <ol>
  *   <li>A WMI query is executed using the utility class {@link WmiUtil}, returning a
@@ -31,7 +31,7 @@ import java.util.List;
  *   <li>The resulting list of entities is returned to the caller for processing or persistence.</li>
  * </ol>
  *
- * <h5>Type Parameters</h5>
+ * <h2>Type Parameters</h2>
  * <ul>
  *   <li><b>&lt;S&gt;</b> — the entity type defined in {@link io.github.eggy03.pinetree.windows.entity}
  *   to which the result will be mapped.</li>
@@ -39,10 +39,10 @@ import java.util.List;
  *   representing the case-sensitive property fields of the WMI class.</li>
  * </ul>
  *
- * <h5>Thread Safety</h5>
+ * <h2>Thread Safety</h2>
  * Implementations are typically stateless and thread-safe unless otherwise specified.
  *
- * <h5>Example Implementations</h5>
+ * <h2>Example Implementations</h2>
  * <pre>{@code
  * // Define a mapper for mapping raw WMI query result into a Monitor entity
  * public class MonitorMapper implements CommonMappingInterface<Monitor, MonitorProperty> {

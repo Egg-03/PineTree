@@ -10,13 +10,13 @@ import java.util.List;
  * from WMI.
  * <p>
  * Implementations of this interface are expected to provide:
+ * </p>
  * <ul>
  *   <li>{@link #get()} – retrieve entity data while requiring the method caller to initialize and cleanup COM resources.</li>
  *   <li>{@link #getManaged()} – retrieve entity data without delegating the COM initialization and cleanup to the method caller.</li>
  * </ul>
- * </p>
  *
- * <h5>Flow Description</h5>
+ * <h2>Flow Description</h2>
  * <p>The typical data retrieval flow for service implementations is as follows:</p>
  * <ol>
  *   <li>The service invokes {@link WmiUtil#getResult(String, String, Class)} to execute a WMI query and obtain raw results.</li>
@@ -32,15 +32,15 @@ import java.util.List;
  *     The examples in this documentation show their usages.
  * </p>
  *
- * <h5>Type Parameter</h5>
+ * <h2>Type Parameter</h2>
  * <ul>
  *   <li><b>&lt;S&gt;</b> – the entity type defined in {@link io.github.eggy03.pinetree.windows.entity} returned by the service implementation.</li>
  * </ul>
  *
- * <h5>Thread Safety</h5>
+ * <h2>Thread Safety</h2>
  * Implementations are typically stateless and thread-safe unless otherwise specified.
  *
- * <h5>Example Implementations</h5>
+ * <h2>Example Implementations</h2>
  * <pre>{@code
  * // Example 1: Define a service that fetches Desktop Monitors
  * public class MonitorService implements CommonServiceInterface<Monitor> {

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
  * Fields correspond to properties retrieved from the {@code Win32_AssociatedProcessorMemory} WMI class
  * and represent an association between {@code Win32_Processor} and {@code Win32_CacheMemory}.
  * </p>
- * <p>Links {@link Processor#getDeviceId()} with {@link ProcessorCache#getDeviceId()}</p>
+ * <p>Links {@link Processor} with {@link ProcessorCache} via their device IDs</p>
  * <p>Values are captured at query time and do not automatically update.</p>
  * Instances are thread-safe and may be safely cached or shared across threads.
  *

@@ -18,7 +18,7 @@ import java.util.List;
  * Contacts {@link WmiUtil} to fetch Desktop Monitor info in the form of {@link WbemcliUtil.WmiResult} and then, calls {@link MonitorMapper} to map the result
  * into a list of {@link Monitor} entities.
  * </p>
- * <h5>Thread Safety</h5>
+ * <h2>Thread Safety</h2>
  * Instances are stateless and thread-safe.
  * @since 1.0
  */
@@ -29,7 +29,7 @@ public class MonitorService implements CommonServiceInterface<Monitor> {
      * <p>
      * The caller is responsible for initializing and uninitializing COM.
      *
-     * <h5>Usage Example</h5>
+     * <h4>Usage Example</h4>
      * <pre>{@code
      * try{
      *     ComUtil.initialize();
@@ -59,7 +59,7 @@ public class MonitorService implements CommonServiceInterface<Monitor> {
      * <p>
      * Recommended for most callers who do not require manual COM control.
      *
-     * <h5>Usage Example</h5>
+     * <h4>Usage Example</h4>
      * <pre>{@code
      * List<Monitor> monitorList = new MonitorService().getManaged();
      * monitorList.forEach(monitor-> System.out.println(monitor.toString());

@@ -15,7 +15,6 @@
  *   <li>{@link io.github.eggy03.pinetree.windows.entity.processor.Processor}</li>
  *   <li>{@link io.github.eggy03.pinetree.windows.entity.processor.ProcessorCache}</li>
  * </ul>
- * </p>
  *
  * @since 1.0
  */

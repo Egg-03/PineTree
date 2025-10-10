@@ -18,7 +18,7 @@ import java.util.List;
  * Contacts {@link WmiUtil} to fetch processor info in the form of {@link WbemcliUtil.WmiResult} and then, calls {@link ProcessorCacheMapper} to map the result
  * into a list of {@link ProcessorCache} entities.
  * </p>
- * <h5>Thread Safety</h5>
+ * <h2>Thread Safety</h2>
  * Instances are stateless and thread-safe.
  * @since 1.0
  */
@@ -59,7 +59,7 @@ public class ProcessorCacheService implements CommonServiceInterface<ProcessorCa
      * <p>
      * Recommended for most callers who do not require manual COM control.
      *
-     * <h5>Usage Example</h5>
+     * <h4>Usage Example</h4>
      * <pre>{@code
      * List<ProcessorCache> cacheList = new ProcessorCacheService.getManaged();
      * cacheList.forEach(cache -> System.out.println(cache.toString());

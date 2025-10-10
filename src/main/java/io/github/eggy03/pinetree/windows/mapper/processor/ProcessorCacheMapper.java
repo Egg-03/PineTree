@@ -18,7 +18,7 @@ import static io.github.eggy03.pinetree.windows.util.CastUtil.toStringValue;
  * Methods of this class map the result provided by {@link WbemcliUtil.WmiResult} to
  * immutable {@link ProcessorCache} objects for easier consumption within the application.
  *
- * <h5>Thread Safety</h5>
+ * <h2>Thread Safety</h2>
  * Instances are stateless and therefore thread-safe.
  * @since 1.0
  */

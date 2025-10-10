@@ -14,13 +14,13 @@ import org.jetbrains.annotations.Nullable;
  * {@link io.github.eggy03.pinetree.windows.mapper} package.
  * </p>
  *
- * <h5>Usage</h5>
+ * <h2>Usage</h2>
  * <pre>{@code
  * Object rawValue = result.getValue(MonitorProperty.DeviceID, 0);
  * String deviceId = CastUtil.toStringValue(rawValue);
  * }</pre>
  *
- * <h4>Supported Conversions</h4>
+ * <h2>Supported Conversions</h2>
  * <ul>
  *     <li>{@link #toLongValue(Object)} – Converts numeric values to {@code Long}, handling unsigned conversions.</li>
  *     <li>{@link #toIntegerValue(Object)} – Converts numeric values to {@code Integer}, handling unsigned conversions.</li>
