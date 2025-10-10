@@ -7,7 +7,7 @@ import com.sun.jna.platform.win32.Ole32;
  * Utility class for managing the initialization and uninitialization
  * of the COM library on the current thread.
  * <p>
- * This ensures that Windows Management Instrumentation (WMI) calls can be executed safely.
+ * This ensures that Windows Management Instrumentation (WMI) calls can be executed without leakage of resources.
  * </p>
  * <h2>Usage</h2>
  * <pre>{@code
