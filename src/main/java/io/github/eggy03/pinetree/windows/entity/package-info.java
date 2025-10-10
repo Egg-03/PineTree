@@ -1,6 +1,6 @@
 /**
  * <p>
- *      Contains classes that mimic the computer hardware and configuration classes
+ *      Contains classes that mirror the computer hardware and configuration classes
  *      provided in the default namespace (root/cimv2) of WMI
  * </p>
  * <p>
