@@ -29,7 +29,7 @@
  * </p>
  *
  * <h6>1. Define the Entity</h6>
- * Entities are defined under {@link io.github.eggy03.pinetree.entity}
+ * Entities are defined under {@link io.github.eggy03.pinetree.windows.entity}
  * <pre>{@code
  * @Value
  * @Builder(toBuilder = true)
@@ -56,7 +56,7 @@
  * }</pre>
  *
  * <h6>2. Define the Enum</h6>
- * Enums are defined under {@link io.github.eggy03.pinetree.enums}.
+ * Enums are defined under {@link io.github.eggy03.pinetree.windows.enums}.
  * The names must match the exact property names found in the WMI class documentation.
  * <pre>{@code
  * public enum MonitorProperty {
@@ -87,7 +87,7 @@
  *
  * <h6>3. Implement the Mapper</h6>
  * <p>
- * Mappers reside in the {@link io.github.eggy03.pinetree.mapper} package and implement
+ * Mappers reside in the {@link io.github.eggy03.pinetree.windows.mapper} package and implement
  * {@link io.github.eggy03.pinetree.windows.mapper.CommonMappingInterface}.
  * They handle conversion of raw {@link com.sun.jna.platform.win32.COM.WbemcliUtil.WmiResult}
  * data into your defined entities.
@@ -119,7 +119,7 @@
  *
  * <h6>4. Implement the Service</h6>
  * <p>
- * Services reside in the {@link io.github.eggy03.pinetree.service} package and implement
+ * Services reside in the {@link io.github.eggy03.pinetree.windows.service} package and implement
  * {@link io.github.eggy03.pinetree.windows.service.CommonServiceInterface}.
  * Their flow involves, querying WMI via {@link io.github.eggy03.pinetree.windows.util.WmiUtil}, using a defined mapper to map
  * the raw results into entities and returning them to the caller.
