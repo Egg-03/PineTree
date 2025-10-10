@@ -1,4 +1,26 @@
 /**
+ * Provides an overview of sub-packages for working with Windows Management Instrumentation (WMI) via COM
+ * and outlines how to define, implement and consume your custom WMI classes.
+ *
+ * <p>This base package contains the following sub-packages:</p>
+ * <ul>
+ *   <li>{@link io.github.eggy03.pinetree.windows.entity} – Contains classes that mimic the computer hardware
+ *   and configuration classes provided in the default namespace (root/cimv2) of WMI.</li>
+ *
+ *   <li>{@link io.github.eggy03.pinetree.windows.enums} – Contains enums that define namespaces, class names,
+ *   and extractable properties defined in the official Microsoft documentation.</li>
+ *
+ *   <li>{@link io.github.eggy03.pinetree.windows.mapper} – Contains mappers that convert
+ *   {@link com.sun.jna.platform.win32.COM.WbemcliUtil.WmiResult} into entity classes.</li>
+ *
+ *   <li>{@link io.github.eggy03.pinetree.windows.service} – Contains services that orchestrate
+ *   WMI queries, result fetching, and parsing.</li>
+ *
+ *   <li>{@link io.github.eggy03.pinetree.windows.util} – Contains utility classes for COM management,
+ *   query execution, and result casting.</li>
+ * </ul>
+ *
+ * <h4> Overview </h4>
  * <p>
  * This illustration demonstrates how to define a custom entity, enum, mapper, and service
  * to retrieve WMI data and make it available for consumption outside of this library.
@@ -7,11 +29,10 @@
  * </p>
  *
  * <p>
- * Towards the end of this illustration an example of how to consume your defined service is also included.
- * This is intended for consumers of this library.
+ * The final section demonstrates how to consume the service once it's implemented.
  * </p>
  *
- * <h5>Implementation</h5>
+ * <h4>Implementation</h4>
  *
  * <p> For illustration, we will implement {@code Win32_DesktopMonitor} WMI class.</p>
  *
@@ -160,7 +181,7 @@
  * }
  * }</pre>
  *
- * <h5>Consumption</h5>
+ * <h4>Consumption</h4>
  * <p>
  *     Once implemented, your service can be consumed as follows:
  * </p>
@@ -169,18 +190,23 @@
  * public static void main(String[] args) {
  *     // auto managed COM
  *     List<Monitor> monitorList = new MonitorService().getManaged();
- *     monitorList.forEach(monitor-> System.out.println(monitor.toString());
+ *     monitorList.forEach(monitor-> System.out.println(monitor.toString()));
  *
  *     // self managed COM
  *      try{
  *          ComUtil.initialize();
  *          List<Monitor> monitorList = new MonitorService().get();
- *          monitorList.forEach(monitor-> System.out.println(monitor.toString());
+ *          monitorList.forEach(monitor-> System.out.println(monitor.toString()));
  *      } finally {
  *          ComUtil.uninitialize();
  *      }
  * }
  * }</pre>
+ *
+ * @since 1.0
+ * @see io.github.eggy03.pinetree.windows.service.CommonServiceInterface
+ * @see io.github.eggy03.pinetree.windows.mapper.CommonMappingInterface
+ * @see <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-provider">Microsoft WMI Provider Documentation</a>
  */
 
 package io.github.eggy03.pinetree.windows;
