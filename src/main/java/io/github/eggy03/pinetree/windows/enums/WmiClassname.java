@@ -40,7 +40,22 @@ public enum WmiClassname {
     /**
      * WMI class name for {@code Win32_DesktopMonitor}
      */
-    WIN32_DESKTOP_MONITOR("Win32_DesktopMonitor");
+    WIN32_DESKTOP_MONITOR("Win32_DesktopMonitor"),
+
+    /**
+     * WMI class name for {@code Win32_BIOS}
+     */
+    WIN32_BIOS("Win32_BIOS"),
+
+    /**
+     * WMI class name for {@code Win32_Baseboard}
+     */
+    WIN32_BASEBOARD("Win32_Baseboard"),
+
+    /**
+     * WMI class name for {@code Win32_Baseboard}
+     */
+    WIN32_PORT_CONNECTOR("Win32_PortConnector");
 
     private final String className;
 }
